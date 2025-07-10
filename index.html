@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matuta Utilidades - Tudo o que você precisa!</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/zBdd7d4J/3dcff0f6-9f1b-4d38-b810-74bcc2c19ff1.jpg">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Cor de fundo suave */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-lime-600 to-lime-800 text-white p-6 shadow-lg rounded-b-2xl">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center mb-2 md:mb-0">
+                <!-- Logo -->
+                <img src="https://i.postimg.cc/zBdd7d4J/3dcff0f6-9f1b-4d38-b810-74bcc2c19ff1.jpg" alt="[Logotipo Matuta Utilidades]" class="h-12 w-12 mr-3 rounded-full object-cover">
+                <h1 class="text-4xl font-extrabold">Matuta Utilidades</h1>
+            </div>
+            <nav class="text-lg">
+                <ul class="flex space-x-6">
+                    <li><a href="#sobre" class="hover:text-lime-200 transition duration-300">Sobre Nós</a></li>
+                    <li><a href="#produtos" class="hover:text-lime-200 transition duration-300">Produtos</a></li>
+                    <li><a href="#servicos" class="hover:text-lime-200 transition duration-300">Serviços</a></li>
+                    <li><a href="#contato" class="hover:text-lime-200 transition duration-300">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-white py-20 px-6 text-center rounded-xl shadow-md mx-4 mt-8">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-lime-700 mb-6">Tudo o que você precisa, em um só lugar!</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Na Matuta Utilidades, você encontra uma vasta gama de produtos para o seu dia a dia e a melhor assessoria para o seu celular.
+            </p>
+            <!-- Updated button to use smooth scroll -->
+            <a href="#contato" class="bg-lime-600 hover:bg-lime-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 smooth-scroll">
+                Fale Conosco
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="sobre" class="py-16 px-6 bg-gray-100 rounded-xl shadow-md mx-4 mt-8">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold text-lime-700 mb-10">Sobre a Matuta Utilidades</h3>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+                <div class="md:w-1/2">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        Somos a sua loja de confiança em Ribeirão Preto, com mais de 5 anos de experiência no mercado e oferecendo uma variedade incrível de mais de 10 mil produtos para atender a todas as suas necessidades. Desde itens essenciais para o lar até as últimas novidades em tecnologia, a Matuta Utilidades é o seu destino completo.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Nosso compromisso é com a qualidade, o bom atendimento e a satisfação do cliente. Venha nos visitar e descubra por que somos a escolha certa para você!
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://i.postimg.cc/gcq71jpX/matuta.jpg" border="0" alt="[Imagem da Loja Matuta Utilidades]" class="rounded-lg shadow-xl w-3/4 h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produtos" class="py-16 px-6 bg-white rounded-xl shadow-md mx-4 mt-8">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold text-lime-700 mb-10">Nossos Produtos</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1: Utilidades Domésticas -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <img src="https://placehold.co/400x250/FFD700/000000?text=Utilidades+Domésticas" alt="[Imagem de Utilidades Domésticas]" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h4 class="text-2xl font-semibold text-lime-600 mb-3">Utilidades Domésticas</h4>
+                    <p class="text-gray-700">
+                        Encontre tudo para o seu lar: utensílios de cozinha, organização, limpeza e muito mais. Praticidade e qualidade para o seu dia a dia.
+                    </p>
+                </div>
+                <!-- Product Card 2: Eletrônicos e Gadgets -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <img src="https://placehold.co/400x250/90EE90/000000?text=Eletrônicos+e+Gadgets" alt="[Imagem de Eletrônicos e Gadgets]" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h4 class="text-2xl font-semibold text-lime-600 mb-3">Eletrônicos e Gadgets</h4>
+                    <p class="text-gray-700">
+                        Descubra as últimas tendências em eletrônicos, fones de ouvido, carregadores, caixas de som e outros gadgets.
+                    </p>
+                </div>
+                <!-- Product Card 3: Brinquedos e Presentes -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <img src="https://placehold.co/400x250/FFB6C1/000000?text=Brinquedos+e+Presentes" alt="[Imagem de Brinquedos e Presentes]" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h4 class="text-2xl font-semibold text-lime-600 mb-3">Brinquedos e Presentes</h4>
+                    <p class="text-gray-700">
+                        Opções criativas e divertidas para todas as idades. O presente perfeito para qualquer ocasião.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-16 px-6 bg-gray-100 rounded-xl shadow-md mx-4 mt-8">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold text-lime-700 mb-10">Nossos Serviços para Celular</h3>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+                <div class="md:w-1/2">
+                    <img src="https://i.postimg.cc/0505k7D9/18a6def4-571d-440e-983b-629f56a30e31-Editado.jpg" border="0" alt="[Imagem de Assistência Técnica de Celular]" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2 text-left">
+                    <h4 class="text-3xl font-semibold text-lime-600 mb-4">Assessoria Completa para o seu Celular</h4>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Além de uma vasta gama de acessórios, oferecemos serviços especializados para o seu smartphone:
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
+                        <li><span class="font-semibold">Aplicação de Películas:</span> Proteção perfeita para a tela do seu aparelho, com aplicação profissional e sem bolhas.</li>
+                        <li><span class="font-semibold">Venda de Acessórios:</span> Capas, carregadores, fones de ouvido, cabos e muito mais para todas as marcas e modelos.</li>
+                        <li><span class="font-semibold">Consultoria e Dicas:</span> Nossos especialistas estão prontos para te ajudar a escolher os melhores acessórios e tirar suas dúvidas.</li>
+                        <li><span class="font-semibold">Assistência Técnica:</span> Reparos e manutenção para diversos problemas em seu aparelho, com técnicos qualificados.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-16 px-6 bg-lime-700 text-white rounded-xl shadow-md mx-4 mt-8 mb-8">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold mb-8">Entre em Contato</h3>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Venha nos visitar ou entre em contato para saber mais sobre nossos produtos e serviços. Estamos ansiosos para te atender!
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                <div class="text-center">
+                    <p class="text-2xl font-semibold mb-2">Localização:</p>
+                    <!-- Google Maps Link -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Treze+de+Maio+513,+Jardim+Paulistano,+Ribeirão+Preto+-+SP" target="_blank" class="text-lg text-white hover:text-lime-200 transition duration-300">Avenida Treze de Maio 513, Jardim Paulistano</a>
+                </div>
+                <div class="text-center">
+                    <p class="text-2xl font-semibold mb-2">Telefone:</p>
+                    <!-- WhatsApp Link -->
+                    <a href="https://wa.me/5516993069775?text=Olá! Vim pelo site da Matuta Utilidades e gostaria de mais informações." class="text-lg text-white hover:text-lime-200 transition duration-300">(16) 99306-9775</a>
+                </div>
+                <div class="text-center">
+                    <p class="text-2xl font-semibold mb-2">E-mail:</p>
+                    <!-- Email Link -->
+                    <a href="mailto:matutautilidades@gmail.com?subject=Contato%20via%20Site%20Matuta%20Utilidades&body=Olá! Gostaria de mais informações sobre seus produtos/serviços." class="text-lg text-white hover:text-lime-200 transition duration-300">matutautilidades@gmail.com</a>
+                </div>
+            </div>
+            <!-- Instructions for contact methods -->
+            <div class="mt-8 text-lg text-white max-w-3xl mx-auto">
+                <p class="mb-2">
+                    Clique no **endereço** para abrir a localização no Google Maps.
+                </p>
+                <p class="mb-2">
+                    Clique no **número de telefone** para iniciar uma conversa no WhatsApp.
+                </p>
+                <p>
+                    Clique no **e-mail** para abrir seu aplicativo de e-mail e nos enviar uma mensagem.
+                </p>
+            </div>
+            <div class="mt-10">
+                <p class="text-xl font-semibold mb-4">Horário de Funcionamento:</p>
+                <p class="text-lg">Segunda a Sexta: 9h00 - 19h00</p>
+                <p class="text-lg">Sábado: 9h00 - 16h00</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white p-6 text-center rounded-t-2xl">
+        <div class="container mx-auto">
+            <p class="mb-4">&copy; 2025 Matuta Utilidades. Todos os direitos reservados.</p>
+            <div class="flex justify-center space-x-6 text-2xl">
+                <!-- Instagram Icon -->
+                <a href="https://www.instagram.com/matutautilidades?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-lime-400 transition duration-300">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- Facebook Icon -->
+                <a href="https://www.facebook.com/Matutautilidades/?locale=pt_BR" target="_blank" class="hover:text-lime-400 transition duration-300">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <!-- TikTok Icon -->
+                <a href="https://www.tiktok.com/@matutautilidades1?is_from_webapp=1&sender_device=pc" target="_blank" class="hover:text-lime-400 transition duration-300">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll functionality
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
