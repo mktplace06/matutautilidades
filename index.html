@@ -27,12 +27,13 @@
                 <img src="https://i.postimg.cc/zBdd7d4J/3dcff0f6-9f1b-4d38-b810-74bcc2c19ff1.jpg" alt="[Logotipo Matuta Utilidades]" class="h-12 w-12 mr-3 rounded-full object-cover">
                 <h1 class="text-4xl font-extrabold">Matuta Utilidades</h1>
             </div>
-            <nav class="text-lg">
+            <!-- Main Navigation - Hidden on small screens -->
+            <nav class="hidden md:block text-lg">
                 <ul class="flex space-x-6">
-                    <li><a href="#sobre" class="hover:text-lime-200 transition duration-300">Sobre Nós</a></li>
-                    <li><a href="#produtos" class="hover:text-lime-200 transition duration-300">Produtos</a></li>
-                    <li><a href="#servicos" class="hover:text-lime-200 transition duration-300">Serviços</a></li>
-                    <li><a href="#contato" class="hover:text-lime-200 transition duration-300">Contato</a></li>
+                    <li><a href="#sobre" class="hover:text-lime-200 transition duration-300 smooth-scroll">Sobre Nós</a></li>
+                    <li><a href="#produtos" class="hover:text-lime-200 transition duration-300 smooth-scroll">Produtos</a></li>
+                    <li><a href="#servicos" class="hover:text-lime-200 transition duration-300 smooth-scroll">Serviços</a></li>
+                    <li><a href="#contato" class="hover:text-lime-200 transition duration-300 smooth-scroll">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -58,10 +59,10 @@
             <h3 class="text-4xl font-bold text-lime-700 mb-10">Sobre a Matuta Utilidades</h3>
             <div class="flex flex-col md:flex-row items-center justify-center gap-10">
                 <div class="md:w-1/2">
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
                         Somos a sua loja de confiança em Ribeirão Preto, com mais de 5 anos de experiência no mercado e oferecendo uma variedade incrível de mais de 10 mil produtos para atender a todas as suas necessidades. Desde itens essenciais para o lar até as últimas novidades em tecnologia, a Matuta Utilidades é o seu destino completo.
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
+                    <p class="text-xl text-gray-700 leading-relaxed">
                         Nosso compromisso é com a qualidade, o bom atendimento e a satisfação do cliente. Venha nos visitar e descubra por que somos a escolha certa para você!
                     </p>
                 </div>
@@ -194,16 +195,80 @@
         </div>
     </footer>
 
+    <!-- Mobile Menu Button (FAB) -->
+    <button id="mobileMenuButton" class="fixed bottom-8 right-8 bg-lime-600 text-white p-4 rounded-full shadow-lg md:hidden z-50 transition duration-300 transform hover:scale-110">
+        <i class="fas fa-bars text-2xl"></i>
+    </button>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden md:hidden z-40 transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div class="bg-white p-8 rounded-lg shadow-xl text-center w-11/12 max-w-sm relative">
+            <button id="closeMenuButton" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-3xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav class="flex flex-col space-y-6 text-xl font-semibold">
+                <a href="#sobre" class="text-gray-800 hover:text-lime-700 transition duration-300 smooth-scroll mobile-menu-link">Sobre Nós</a>
+                <a href="#produtos" class="text-gray-800 hover:text-lime-700 transition duration-300 smooth-scroll mobile-menu-link">Produtos</a>
+                <a href="#servicos" class="text-gray-800 hover:text-lime-700 transition duration-300 smooth-scroll mobile-menu-link">Serviços</a>
+                <a href="#contato" class="text-gray-800 hover:text-lime-700 transition duration-300 smooth-scroll mobile-menu-link">Contato</a>
+            </nav>
+        </div>
+    </div>
+
     <script>
-        // Smooth scroll functionality
+        // Smooth scroll functionality for all internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
                     behavior: 'smooth'
                 });
+                // Close mobile menu if open after clicking a link
+                if (mobileMenu.classList.contains('block') || mobileMenu.classList.contains('opacity-100')) {
+                    toggleMobileMenu();
+                }
             });
+        });
+
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+
+        function toggleMobileMenu() {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => { // Allow reflow before transition
+                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                    mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+                }, 10);
+                mobileMenuButton.querySelector('i').classList.remove('fa-bars');
+                mobileMenuButton.querySelector('i').classList.add('fa-times');
+            } else {
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                setTimeout(() => { // Allow transition before hiding
+                    mobileMenu.classList.add('hidden');
+                }, 300); // Match transition duration
+                mobileMenuButton.querySelector('i').classList.remove('fa-times');
+                mobileMenuButton.querySelector('i').classList.add('fa-bars');
+            }
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+        closeMenuButton.addEventListener('click', toggleMobileMenu);
+
+        // Close menu if clicked outside the menu content (on the overlay)
+        mobileMenu.addEventListener('click', function(event) {
+            if (event.target === mobileMenu) { // Only close if the click is directly on the overlay
+                toggleMobileMenu();
+            }
+        });
+
+        // Close menu when a link inside it is clicked
+        document.querySelectorAll('.mobile-menu-link').forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
         });
     </script>
 </body>
