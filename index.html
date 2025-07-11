@@ -196,17 +196,17 @@
     </footer>
 
     <!-- Mobile Menu Button (FAB) -->
-    <button id="mobileMenuButton" class="fixed bottom-8 right-8 bg-lime-600 text-white p-4 rounded-full shadow-lg md:hidden z-50 transition duration-300 transform hover:scale-110">
-        <i class="fas fa-bars text-2xl"></i>
+    <button id="mobileMenuButton" class="fixed top-6 right-6 bg-lime-600 text-white p-3 rounded-full shadow-lg md:hidden z-50 transition duration-300 transform hover:scale-110">
+        <i class="fas fa-bars text-xl"></i>
     </button>
 
-    <!-- Mobile Navigation Menu -->
-    <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden md:hidden z-40 transition-opacity duration-300 opacity-0 pointer-events-none">
-        <div class="bg-white p-8 rounded-lg shadow-xl text-center w-11/12 max-w-sm relative">
-            <button id="closeMenuButton" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-3xl">
+    <!-- Mobile Navigation Menu (Slide-in from right) -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-75 flex justify-end hidden md:hidden z-40 transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div class="bg-white w-64 h-full p-6 relative transform translate-x-full transition-transform duration-300 ease-in-out">
+            <button id="closeMenuButton" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-2xl">
                 <i class="fas fa-times"></i>
             </button>
-            <nav class="flex flex-col space-y-6 text-xl font-semibold">
+            <nav class="flex flex-col space-y-6 text-xl font-semibold mt-12">
                 <a href="#sobre" class="text-gray-800 hover:text-lime-700 transition duration-300 smooth-scroll mobile-menu-link">Sobre Nós</a>
                 <a href="#produtos" class="text-gray-800 hover:text-lime-700 transition duration-300 smooth-scroll mobile-menu-link">Produtos</a>
                 <a href="#servicos" class="text-gray-800 hover:text-lime-700 transition duration-300 smooth-scroll mobile-menu-link">Serviços</a>
@@ -225,7 +225,7 @@
                     behavior: 'smooth'
                 });
                 // Close mobile menu if open after clicking a link
-                if (mobileMenu.classList.contains('block') || mobileMenu.classList.contains('opacity-100')) {
+                if (!mobileMenu.classList.contains('opacity-0')) { // Check if menu is visible
                     toggleMobileMenu();
                 }
             });
@@ -235,20 +235,23 @@
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const mobileMenu = document.getElementById('mobileMenu');
         const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenuContent = mobileMenu.querySelector('div'); // The sliding content div
 
         function toggleMobileMenu() {
             if (mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.remove('hidden');
-                setTimeout(() => { // Allow reflow before transition
+                setTimeout(() => {
                     mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
                     mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+                    mobileMenuContent.classList.remove('translate-x-full');
                 }, 10);
                 mobileMenuButton.querySelector('i').classList.remove('fa-bars');
                 mobileMenuButton.querySelector('i').classList.add('fa-times');
             } else {
+                mobileMenuContent.classList.add('translate-x-full');
                 mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
                 mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-                setTimeout(() => { // Allow transition before hiding
+                setTimeout(() => {
                     mobileMenu.classList.add('hidden');
                 }, 300); // Match transition duration
                 mobileMenuButton.querySelector('i').classList.remove('fa-times');
